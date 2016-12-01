@@ -27,6 +27,7 @@ const AlmostSorted = (function(){
   function printResponse(isSwappable, isReversable) {
 
     if (isAlreadySorted) { //eslint-disable-line
+      /* eslint-disable no-console */
       console.log("yes");
     } else if (isSwappable) {
       console.log("yes");
@@ -37,6 +38,8 @@ const AlmostSorted = (function(){
     } else if (!isSwappable && !isReversable) {
       console.log("no");
     }
+    /* eslint-enable no-console */
+
   }
 
   function getOutOfOrder(array) {
