@@ -6,6 +6,11 @@
   "directories": {
     "test": "test"
   },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2"
+  },
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-polyfill": "^6.16.0",
@@ -23,13 +28,17 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-image-resize": "^0.10.0",
     "gulp-imagemin": "^3.1.1",
+    "gulp-ng-annotate": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gulp-zip": "^3.2.0",
-    "gulp-ng-annotate": "^2.0.0"
+    "immutable": "^3.8.1",
+    "jasmine": "^2.5.2",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -44,11 +53,6 @@
     "url": "https://github.com/asadowns/algorithm-sandbox/issues"
   },
   "homepage": "https://github.com/asadowns/algorithm-sandbox",
-  "dependencies": {
-    "immutable": "^3.8.1",
-    "jquery": "^3.1.1",
-    "lodash": "^4.17.2"
-  },
   "keywords": [
     "algorithms"
   ]

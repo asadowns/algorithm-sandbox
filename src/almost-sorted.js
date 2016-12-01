@@ -1,28 +1,18 @@
-/*function processData(input) {
-  const vm = AlmostSorted;
-  input = input.split('\n');
-  n = input[0];
-  array = input[1].split(' ').map(Number);
-  sorted = array.slice().sort();
-  isAlreadySorted = (array == sorted);
-  outOfOrder = vm.getOutOfOrder(array);
-  const isSwappable = vm.testSwap(array, outOfOrder, sorted);
-  const isReversable = vm.testReverse(array, outOfOrder, sorted);
-  vm.printResponse(isSwappable, isReversable);
-}*/
 /* eslint-disable */
 const AlmostSorted = (function(){
 
   const service = {
-    printResponse: printResponse,
     getOutOfOrder: getOutOfOrder,
-    testSwap: testSwap,
-    testReverse: testReverse,
+    printResponse: printResponse,
     reverseElementsArray: reverseElementsArray,
-    swapElementsArray: swapElementsArray
+    swapElementsArray: swapElementsArray,
+    testReverse: testReverse,
+    testSwap: testSwap
+
   };
 
   return service;
+
   /* eslint-enable */
   function printResponse(isSwappable, isReversable) {
 
