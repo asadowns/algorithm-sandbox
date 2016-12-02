@@ -5,8 +5,8 @@ const kangaroo = (function() {
     comparePosition,
     counter: 0,
     returnResult: returnResult,
-    status: '',
-    reason: ''
+    status: "",
+    reason: ""
   };
   /* eslint-enable */
 
