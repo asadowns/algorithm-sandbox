@@ -24,6 +24,7 @@ class SherlockPairs {
 
     const duplicates = Object.keys(dictionaryOfCounts).filter((value) => dictionaryOfCounts[value] > 1);
 
+    //nPk, k = 2 -> n*n-1
     return duplicates.reduce((count, current) => count + (dictionaryOfCounts[current] * (dictionaryOfCounts[current] - 1)), 0);
   }
 
