@@ -7,33 +7,24 @@ class SherlockPairs {
     const arr = this.input.split("\n");
     return arr.filter((inputRow, inputRowIndex) => inputRowIndex > 0 && inputRowIndex % 2 === 0)
       .map((testCase) => testCase.split(" ")
-        .map(Number));
+        .map(Number)
+        .sort()
+      );
   }
 
   examineCases() {
     return this.cleanInput()
-      .map((testCase) => testCase
-        .reduce((sumMatchingIndexes, curr, index, caseArray) => sumMatchingIndexes + caseArray
-          .filter((val) => val === curr)
-          .length - 1
-        , 0)
+      .map((value) => this.processCase(value)
       );
   }
 
-  spliceAndIncrement(array) {
-    const countUniques = [...new Set(array)].length;
-    console.log(countUniques);
-    let duplicates = 0;
-    for (let index = array.length - 1; index >= 0; index--) {
-      let indexOfValue = array.lastIndexOf(array[index]);
-      if (indexOfValue > -1) {
-        array.splice(indexOfValue, 1);
-        duplicates++;
-      }
-    }
-    console.log(duplicates - countUniques);
+  processCase(array) {
+    const dictionaryOfCounts = array.reduce((value, count) =>
+        Object.assign(value, {[count]: (value[count] || 0) + 1}), {});
 
+    const duplicates = Object.keys(dictionaryOfCounts).filter((value) => dictionaryOfCounts[value] > 1);
 
+    return duplicates.reduce((count, current) => count + (dictionaryOfCounts[current] * (dictionaryOfCounts[current] - 1)), 0);
   }
 
   get answer() {
@@ -43,12 +34,13 @@ class SherlockPairs {
 
 }
 
-const sherlockPairs = new SherlockPairs("2\n3\n1 2 3\n3\n1 1 2");
-console.log(sherlockPairs.spliceAndIncrement([1, 1, 2, 2]));
 /*
-function processData("2\n3\n1 2 3\n3\n1 1 2") {
+const sherlockPairs = new SherlockPairs("2\n3\n1 2 3\n3\n2 1 1 1");
+console.log(sherlockPairs.examineCases());
+*/
+
+function processData(input) {
   const sherlockPairs = new SherlockPairs(input);
   console.log(sherlockPairs.answer);
-
 }
-*/
+
